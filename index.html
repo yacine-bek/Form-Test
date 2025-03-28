@@ -17,6 +17,7 @@
                         type="text"
                         id="name"
                         onfocus="inputClick('error-n','name')"
+                        oninput="testName('error-n','name')"
                     />
                     <span id="error-n">*</span>
                 </div>
@@ -33,7 +34,11 @@
 
                 <div>
                     <label for="age">Age :</label>
-                    <input type="text" id="age" />
+                    <input
+                        type="text"
+                        id="age"
+                        onfocus="inputClick('error-a','age')"
+                    />
                     <span id="error-a"></span>
                 </div>
 
@@ -42,6 +47,7 @@
                     <input
                         type="password"
                         id="password"
+                        oninput="testPassword('error-p','error-c')"
                         onfocus="inputClick('error-p','password')"
                     />
                     <span id="error-p">*</span>
@@ -54,6 +60,7 @@
                     <input
                         type="password"
                         id="confirmation"
+                        oninput="testPassword('error-p','error-c')"
                         onfocus="inputClick('error-c','confirmation')"
                     />
                     <span id="error-c">*</span>

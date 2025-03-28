@@ -1,6 +1,5 @@
 function validateForm(event) {
     event.preventDefault();
-    // Name validation
     const name = document.getElementById("name").value.trim();
     const age = document.getElementById("age").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -59,10 +58,53 @@ function afficher_error(errorId, content, input) {
     return false;
 }
 
+
+
+
+
+
+
+//optional....
+function testPassword(idPass, idConf) {
+    const password = document.getElementById("password").value.trim();
+    const confirmation = document.getElementById("confirmation").value.trim();
+    if (password.length >= 6) {
+        document.getElementById(idPass).innerText = "✔";
+        document.getElementById(idPass).style.color = "#4fb365";
+        if (confirmation === password) {
+            document.getElementById(idConf).innerText = "✔";
+            document.getElementById(idConf).style.color = "#4fb365";
+        } else {
+            document.getElementById(idConf).innerText = "*";
+            document.getElementById("password").style.borderBottomColor = "";
+            document.getElementById(idConf).style.color = "";
+        }
+    } else {
+        document.getElementById(idPass).innerText = "*";
+        document.getElementById("password").style.borderBottomColor = "";
+        document.getElementById(idPass).style.color = "";
+    }
+}
+
 function inputClick(id, input) {
     const error = document.getElementById(id).innerText.trim();
-    if (error !== "*") {
+    if (error !== ("*" && "✔")) {
+        document.getElementById(input).style.borderBottomColor = "";
+        document.getElementById(id).innerText = "";
+        if (input !== "age") {
+            document.getElementById(id).innerText = "*";
+        }
+    }
+}
+
+function testName(id, input) {
+    const name = document.getElementById(input).value.trim();
+    if (name != "") {
+        document.getElementById(id).innerText = "✔";
+        document.getElementById(id).style.color = "#4fb365";
+    } else {
         document.getElementById(id).innerText = "*";
         document.getElementById(input).style.borderBottomColor = "";
+        document.getElementById(id).style.color = "";
     }
 }
