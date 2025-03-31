@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form</title>
+        <link rel="stylesheet" href="css.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Formulaire d'inscription</h1>
+            <form onsubmit="validateForm(event)" id="form">
+                <div>
+                    <label for="name">Nom :</label>
+                    <input
+                        type="text"
+                        id="name"
+                        onfocus="inputClick('error-n','name')"
+                        oninput="testName('error-n','name')"
+                    />
+                    <span id="error-n">*</span>
+                </div>
+
+                <div>
+                    <label for="prenom">Prenom :</label>
+                    <input type="text" id="prenom" />
+                </div>
+
+                <div>
+                    <label for="email">Email :</label>
+                    <input type="text" id="email" />
+                </div>
+
+                <div>
+                    <label for="age">Age :</label>
+                    <input
+                        type="text"
+                        id="age"
+                        onfocus="inputClick('error-a','age')"
+                    />
+                    <span id="error-a"></span>
+                </div>
+
+                <div>
+                    <label for="password">Mot de passe :</label>
+                    <input
+                        type="password"
+                        id="password"
+                        oninput="testPassword('error-p','error-c')"
+                        onfocus="inputClick('error-p','password')"
+                    />
+                    <span id="error-p">*</span>
+                </div>
+
+                <div>
+                    <label for="confirmation"
+                        >Confirmation mot de passe :</label
+                    >
+                    <input
+                        type="password"
+                        id="confirmation"
+                        oninput="testPassword('error-p','error-c')"
+                        onfocus="inputClick('error-c','confirmation')"
+                    />
+                    <span id="error-c">*</span>
+                </div>
+
+                <input type="submit" id="submit-button" value="S'inscrire" />
+            </form>
+        </div>
+    </body>
+</html>
