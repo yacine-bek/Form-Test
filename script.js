@@ -7,43 +7,45 @@ function validateForm(event) {
 
     valide = true;
     if (name === "") {
-        valide = afficher_error("error-n", "* Name is required", "name");
+        document.getElementById("error-n").style.color = "red";
+        document.getElementById("error-n").innerText = "* Name is required";
+        document.getElementById("name").style.borderBottomColor = "#c96363";
+        valid =  false;
     }
 
     if (password === "") {
-        valide = afficher_error(
-            "error-p",
-            "* Password is required",
-            "password"
-        );
+        document.getElementById("error-p").style.color = "red";
+        document.getElementById("error-p").innerText = "* Password is required";
+        document.getElementById("password").style.borderBottomColor = "#c96363";
+        valide = false;
     }
 
     if (password !== "" && password.length < 6) {
-        valide = afficher_error(
-            "error-p",
-            "* Password should be atleast 6 characters",
-            "password"
-        );
+        document.getElementById("error-p").style.color = "red";
+        document.getElementById("error-p").innerText = "* Password should be atleast 6 characters";
+        document.getElementById("password").style.borderBottomColor = "#c96363";
+        return false;
     }
 
     if (confirmation === "") {
-        valide = afficher_error(
-            "error-c",
-            "* Password confirmation is required",
-            "confirmation"
-        );
+        document.getElementById("error-c").style.color = "red";
+        document.getElementById("error-c").innerText = "* Password confirmation is required";
+        document.getElementById("confirmation").style.borderBottomColor = "#c96363";
+        valide = false;
     }
 
     if (confirmation !== "" && confirmation !== password) {
-        valide = afficher_error(
-            "error-c",
-            "* Confirmation must be similar as the password",
-            "confirmation"
-        );
+        document.getElementById("error-c").style.color = "red";
+        document.getElementById("error-c").innerText = "* Confirmation must be similar as the password";
+        document.getElementById("confirmation").style.borderBottomColor = "#c96363";
+        valide = false;
     }
 
     if (isNaN(age)) {
-        valide = afficher_error("error-a", "* Age must be a number", "age");
+        document.getElementById("error-a").style.color = "red";
+        document.getElementById("error-a").innerText = "* Age must be a number";
+        document.getElementById("age").style.borderBottomColor = "#c96363";
+        valide = false;
     }
 
     if (valide) {
@@ -51,12 +53,8 @@ function validateForm(event) {
     }
 }
 
-function afficher_error(errorId, content, input) {
-    document.getElementById(errorId).style.color = "red";
-    document.getElementById(errorId).innerText = content;
-    document.getElementById(input).style.borderBottomColor = "#c96363";
-    return false;
-}
+
+
 
 
 
