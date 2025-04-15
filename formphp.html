@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form</title>
+        <link rel="stylesheet" href="css.css" />
+    </head>
+
+    <body>
+        <div id="container">
+            <h1>Formulaire d'inscription</h1>
+            <form method="get" action="verification.php">
+                <div>
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="nom" />
+                    <span>*</span>
+                </div>
+
+                <div>
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" />
+                </div>
+
+                <div>
+                    <label for="email">Email :</label>
+                    <input type="text" id="email" name="email" />
+                </div>
+
+                <div>
+                    <label for="age">Âge :</label>
+                    <input type="text" id="age" name="age" />
+                    <span></span>
+                </div>
+
+                <div>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="motdepasse" />
+                    <span>*</span>
+                </div>
+
+                <div>
+                    <label for="confirmation">Confirmation mot de passe :</label>
+                    <input
+                        type="password"
+                        id="confirmation"
+                        name="confirmation"
+                    />
+                    <span>*</span>
+                </div>
+
+                <input type="submit" value="S'inscrire" id="submit-button"/>
+            </form>
+        </div>
+    </body>
+</html>
